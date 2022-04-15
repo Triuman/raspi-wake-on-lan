@@ -1,7 +1,7 @@
 const wol = require("wol");
 const { io } = require("socket.io-client");
 
-const PC_MAC_ADDRESS = "";
+const PC_MAC_ADDRESS = "44:85:00:91:BA:27";
 
 var socket = io("http://localhost:3000");
 
