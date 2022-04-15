@@ -1,0 +1,10 @@
+{
+  "name": "remote-client",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "triuman",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4"
+  }
+}

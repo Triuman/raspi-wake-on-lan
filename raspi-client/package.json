@@ -1,0 +1,11 @@
+{
+  "name": "raspi-wake-on-lan",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "triuman",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^4.4.1",
+    "wol": "^1.0.7"
+  }
+}

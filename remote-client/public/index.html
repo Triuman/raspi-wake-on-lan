@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Remote Wake on Lan</title>
+
+    <script
+        src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+        crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+    <script>
+        const socket = io("http://localhost:3000");
+
+        socket.on("connect", () => {
+            console.log('connected to the server');
+        });
+
+        socket.on("raspi", ({ isRaspiOnline }) => {
+            console.log(`raspi is ${isRaspiOnline ? 'online' : 'offline'}`);
+        });
+
+        let macAddress = '';
+
+        function wakeUp() {
+            socket.emit('wakeup', macAddress);
+            alert('wake up command is sent!');
+        }
+    </script>
+    <button onclick="wakeUp()">Wake Up</button>
+</body>
+
+</html>
